@@ -6,9 +6,9 @@ import Signup from "./pages/Auth/Signup";
 import Payment from "./pages/Auth/payment/Payment";
 import Orders from "./pages/Auth/orders/Orders";
 import Cart from "./pages/Auth/Cart/Cart";
-// import Results from "./pages/Auth/Results/Results";
-// import Results from "/src/pages/Auth/Results/Results.jsx";
 import Results from "./pages/Auth/Results/Results";
+import ProductDetail from "./pages/Auth/productDetail/ProductDetail";
+ProductDetail
 
 function Routing() {
   return (
@@ -19,6 +19,7 @@ function Routing() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/category/:categoryName" element={<Results />} />
+        <Route path="/products/:productId" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
