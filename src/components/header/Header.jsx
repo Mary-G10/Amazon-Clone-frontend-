@@ -54,7 +54,7 @@ const Header = () => {
               </select>
               </Link>
             
-            <Link to="">
+            <Link to="/">
               
                 <p>Sign In</p>
                 <span>Account & Lists</span>
