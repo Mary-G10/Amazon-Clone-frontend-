@@ -11,7 +11,7 @@ import Loader from "../../../components/Loader/Loader";
 function ProductDetail() {
   const { productId } = useParams();
   const [product, setProduct] = useState({});
-  const [isLoading, setIsLoading] = useState(false); // Fixed: use array destructuring
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -25,14 +25,17 @@ function ProductDetail() {
         console.log(err);
         setIsLoading(false);
       });
-  }, [productId]); // Added productId as dependency
+  }, [productId]);
 
   return (
     <LayOut>
-      {isLoading ? <Loader /> : <ProductCard product={product} />}
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <ProductCard product={product} flex={true} renderDesc={true} />
+      )}
     </LayOut>
   );
 }
 
 export default ProductDetail;
-

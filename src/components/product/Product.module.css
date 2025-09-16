@@ -1,0 +1,143 @@
+/* 
+
+
+
+
+.product_flexed{
+    box-shadow: none;
+    height: auto;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+.product_flexed h3{
+    padding: 0px 0px;
+
+}
+.product_flexed .button{
+    display: block;
+    position: static;
+    width: 150px;
+    margin-right: 40px;
+}
+.product_flexed{
+    height: 50vh;
+}
+.product_flexed img{
+    width: 300px !important;
+    height: auto; 
+} 
+ @media screen and (max-width: 768px){
+    .product_flexed{
+        display: flex;
+        flex-direction: column;
+    }
+ } */
+  /* .product_flexed {
+    box-shadow: none;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    min-height: 50vh; 
+  } */
+
+
+/* Flexed layout for product detail page */
+.product_flexed {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 50px;
+    width: 100%;
+    min-height: 50vh;
+    align-items: flex-start;
+    box-shadow: none;
+}
+
+/* Image stays on the LEFT */
+.product_flexed img {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* All text content goes to the RIGHT */
+.product_flexed > div:last-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product_flexed h3 {
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.product_flexed .rating {
+    margin: 10px 0;
+}
+
+.product_flexed .button {
+    width: 150px;
+    margin-top: 15px;
+    display: block;
+    position: static;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .product_flexed {
+        flex-direction: column !important;
+        gap: 20px;
+    }
+    
+    .product_flexed img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+/* Content wrapper - RIGHT side */
+.product_flexed .content_wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product_flexed h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+.product_flexed .rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product_flexed .button {
+    width: 150px;
+    margin-top: 20px;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .product_flexed {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .product_flexed .img_container {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .product_flexed .button {
+        width: 100%;
+        max-width: 200px;
+    }
+}
