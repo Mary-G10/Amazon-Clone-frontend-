@@ -11,6 +11,9 @@
     padding: 20px;
 
 }
+.container div:not(.subTotal){
+    height: auto !important;
+}
 .cart_container h2,
 .cart_container h3{
     padding: 10px;
