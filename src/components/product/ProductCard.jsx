@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../dataProvider/DataProvider";
 import { Type } from "../../utility/Action.type";
 
-const ProductCard = ({ product, flex, renderDesc }) => {
+const ProductCard = ({ product, flex, renderDesc, renderAdd }) => {
   const { image, title, id, rating, price, description } = product;
   const [state, dispatch] = useContext(DataContext);
 
@@ -30,14 +30,12 @@ const ProductCard = ({ product, flex, renderDesc }) => {
         flex ? styles.product_flexed : ""
       }`}
     >
-      {/* Image container - this will be on the LEFT */}
       <div className={styles.image_wrapper}>
         <Link to={`/products/${product.id}`}>
           <img src={image} alt={title} className={styles.img_container} />
         </Link>
       </div>
 
-      {/* Content container - this will be on the RIGHT */}
       <div className={styles.content_wrapper}>
         <h3>{title}</h3>
         {renderDesc && <div style={{ maxWidth: "750px" }}>{description}</div>}
@@ -48,9 +46,11 @@ const ProductCard = ({ product, flex, renderDesc }) => {
         <div className={styles.price}>
           <CurrencyFormat amount={price} />
         </div>
-        <button className={styles.button} onClick={addToCart}>
-          add to cart
-        </button>
+        {renderAdd && (
+          <button className={styles.button} onClick={addToCart}>
+            add to cart
+          </button>
+        )}
       </div>
     </div>
   );
