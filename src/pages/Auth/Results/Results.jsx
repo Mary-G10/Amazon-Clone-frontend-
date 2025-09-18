@@ -1,11 +1,8 @@
 import React, { useState,useEffect } from "react";
-import ProductCard from '../../../components/product/ProductCard'; // adjust path if needed
-
+import ProductCard from '../../../components/product/ProductCard'; 
 import classes from "./Results.module.css";
 import LayOut from "../../../components/LayOut/LayOut";
-// import { useParams } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
 import axios from "axios";
 import { productUrl } from "../../../Api/EndPoints";
 

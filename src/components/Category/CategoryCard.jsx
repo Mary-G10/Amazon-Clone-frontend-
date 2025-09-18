@@ -1,22 +1,36 @@
-import styles from "./Category.module.css";
-// import classes from "./Category.module.css";
+// import styles from "./Category.module.css";
+ import classes from "./Category.module.css";
 import { Link } from "react-router-dom";
 
 const CategoryCard = ({ data }) => {
   console.log(data);
 
   return (
-    <div className={styles.category}>
+    <div className={classes.category}>
       <Link to={`/category/${data.name}`}>
-      
-        <span>
-          <h2>{data?.title}</h2>
-        </span>
         <img src={data?.imgLink} alt={data.title} />
-        <p>shop now</p>
+        <span>
+          <h2 className={classes.titleCenter}>{data?.title}</h2>
+          {/* <h2>{data?.title}</h2> */}
+          <p>shop now</p>
+        </span>
       </Link>
     </div>
   );
 };
 
 export default CategoryCard;
+
+{/* <Link to={`/category/${data.name}`}>
+
+Creates a Link component for navigation
+Uses template literal to create dynamic URL: /category/[category-name]
+data.name provides the category name for the route */}
+
+// <img src={data?.imgLink} alt={data.title} />
+
+// Displays category image
+// data?.imgLink uses optional chaining to safely access imgLink property
+// alt attribute uses data.title for accessibility
+// <h2 className={classes.titleCenter}>{data?.title}</h2>
+// Displays category title as heading

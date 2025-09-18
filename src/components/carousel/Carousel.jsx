@@ -1,27 +1,4 @@
-// import React from 'react'
-// import {Carousel} from 'react-responsive-carousel'
-// import {img} from '../carousel/img/data'
-// import "react-responsive-carousel/lib/styles/carousel.min.css"
-// function CarouselEffect  ()  {
-//   return (
-//     <div>
-//       <carousel
-//         autoPlay={true}
-//         infiniteLoop={true}
-//         showIndicators={false}
-//         showThumbs={false}>
-//             {
-//                 img.map((imageItemLink)=>{
-//                     return <img src={imageItemLink}/>
-//                 })
-//             }
-//       </carousel>
-//       <div className={classes.hero_img}></div>
-//     </div>
-//   )
-// }
 
-// export default CarouselEffect
 import React from "react";
 import "./Carousel.css"; 
 import { Carousel } from "react-responsive-carousel";
@@ -37,6 +14,8 @@ function CarouselEffect() {
         showIndicators={false}
         showThumbs={false}
       >
+        {/* 
+Uses the JavaScript map() method to iterate over the img array. For each item in the array, it receives the image URL/path (imageItemLink) and the array index (index). */}
         {img.map((imageItemLink, index) => {
           return (
             <img

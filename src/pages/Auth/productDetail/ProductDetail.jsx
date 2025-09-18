@@ -33,6 +33,7 @@ function ProductDetail() {
         <Loader />
       ) : (
         <ProductCard
+        // passes as a props
          product={product}
           flex={true}
            renderDesc={true}

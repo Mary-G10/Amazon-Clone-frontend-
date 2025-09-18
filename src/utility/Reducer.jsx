@@ -11,6 +11,7 @@ export const reducer = (state, action) => {
       const existingItem = state.basket.find(
         (item) => item.id === action.item.id
       );
+      // if there is no the same product elected,just write the as if the product is 1 otherwise update the basket by adding 1
       if (!existingItem) {
         return {
           ...state,
@@ -18,6 +19,7 @@ export const reducer = (state, action) => {
         };
       } else {
         const updatedBasket = state.basket.map((item) => {
+          // item id is the same which is if you order the same product, bu using map,the item added in the basket
           return item?.id === action.item.id
             ? { ...item, amount: item.amount + 1 }
             : item;
@@ -53,22 +55,3 @@ export const reducer = (state, action) => {
   }
 };
 
-// import { useReducer } from 'react'
-// import{Type} from './Action.type'
-
-// export const initialState={
-//     basket:[]
-// }
-// export const reducer=(state,action)=>{
-//     switch(action,type){
-//         case Type.ADD_TO_BASKET:
-//             return{
-//                 ...state,
-//                 basket:[...state.basket,action.item]
-//             }
-//             default:
-//                 return state;
-//     }
-
-// }
-// const [state,dispatch]=useReducer(reducer,initialS

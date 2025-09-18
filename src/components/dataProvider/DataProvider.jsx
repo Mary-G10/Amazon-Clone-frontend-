@@ -12,33 +12,7 @@ export const DataProvider = ({ children }) => {
     </DataContext.Provider>
   );
 };
-
-// import React, { createContext, useReducer } from "react";
-// import { initialState } from "../../utility/Reducer";
-
 // export const DataContext = createContext();
-
-// export const DataProvider = ({ children, reducer, initialState }) => {
-//   const [state, dispatch] = useReducer(reducer, initialState);
-
-//   return (
-//     <DataContext.Provider value={[state, dispatch]}>
-//       {children}
-//     </DataContext.Provider>
-//   );
-// };
-
-// import React,{createContext, useReducer}from 'react'
-// //  import{useReducer}from'react'
-// import { initialState } from '../../utility/Reducer'
-
-// export const DataContext=createContext()
-// export const DataProvider=({children,reducer,initialState})=>{
-//     return(
-//         <DataContext.Provider value={useReducer(reducer,initialState)}>
-//             {children}
-//         </DataContext.Provider>
-//     )
-
-// }
-// const [state,dispatch]=useReducer(reducer,initialState)
+// Creates a new React Context called DataContext. This will be used to share state across components without prop drilling. The context is created without a default value.
+// export const DataProvider = ({ children }) => {
+// Defines and exports a functional component called DataProvider that accepts children as a prop (representing any child components wrapped by this provider)

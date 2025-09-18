@@ -1,4 +1,4 @@
-.product_flexed {
+ .product_flexed {
     display: flex !important;
     gap: 50px;
     align-items: flex-start;
@@ -11,7 +11,7 @@
     background: white;
 }
 
-/* Image on the LEFT for single product */
+
 .product_flexed img {
     width: 300px !important;
     height: auto !important;
@@ -19,7 +19,7 @@
     padding: 0 !important;
 }
 
-/* Description content on the RIGHT */
+
 .product_flexed > div:last-child {
     flex: 1;
     display: flex;
@@ -47,7 +47,7 @@
     width: 150px !important;
     margin: 15px 0 0 0 !important;
     align-self: flex-start;
-}
+} 
 
 /* Mobile responsive for single product */
 @media screen and (max-width: 768px) {

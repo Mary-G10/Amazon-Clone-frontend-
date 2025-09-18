@@ -11,7 +11,7 @@ import { IoIosArrowUp } from "react-icons/io";
 
 function Cart() {
   const [{ basket, user }, dispatch] = useContext(DataContext);
-
+// by using reducer(prev,curr), return result previous+current initially stat from 0
   const total = basket?.reduce((amount, item) => {
     return amount + item.price * item.amount;
   }, 0);
@@ -39,9 +39,11 @@ function Cart() {
           <h2>Hello</h2>
           <h3>Your shopping basket</h3>
           <hr />
+          {/* if the basket is empty, send oops message */}
           {basket?.length === 0 ? (
             <p>Oops! No item in your cart</p>
           ) : (
+            // if it has item in the cart return productcard, pass the item using props and ten render desr pass
             basket?.map((item, i) => {
               return (
                 <section className={classes.cart_product}>
@@ -72,6 +74,7 @@ function Cart() {
             })
           )}
         </div>
+        {/* the subtotal will add only the cart is not empty */}
         {basket?.length > 0 ? (
           <div className={classes.subTotal}>
             <div>

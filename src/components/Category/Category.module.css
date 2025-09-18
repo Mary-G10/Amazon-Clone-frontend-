@@ -1,5 +1,56 @@
+/* .category{
+  height: 350px;
+  width: 350px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.category img{
+  width: 100%;
+  object-fit: contain;
+  max-height: 250px;
+  padding: 0px 10px;
+}
+.category a{
+  text-decoration: none;
+  color: rgb(35,35,35);
+}
+.category h2,
+.category p{
+  padding: 5px;
+  margin-left: 15px;
+}
+.category p{
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(9,132,209);
+} */
+ .categorySection {
+  position: relative;
+  margin-top: -20%; 
+    /* to place the imag up o the carousel  */
+   display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+    /* to put 4 img equal fraction  */
+   place-items: center; 
+  
+}  
+ .categorySection img {
+  width: 100%;
+  height: 250px; 
+  object-position: top; 
+  border-radius: 8px;
+}    
+  .categorySection{
+  position: relative;
+  margin-top: -10%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  place-items: center;
+}   
 
-
+.titleCenter {
+  text-align: center;
+}
 .categorySection {
   display: flex;
   justify-content: space-between;
@@ -91,7 +142,7 @@
   width: 100%;
   height: 250px;
   object-fit: cover;
-  /* object-position: center top; */
+  
   display: block;
 }
 
@@ -104,4 +155,26 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-size: 0.9rem;
+} 
+  
+
+.categorySection img {   
+  width: 85%;   /* Made smaller */
+  height: 200px;   /* Made smaller */ 
+  object-position: center;   
+  border-radius: 8px;
+  margin: auto;   /* Centers the image within its container */
+  align-self: start;   /* Moves image to top of its grid cell */
+}
+
+.categorySection .category img {
+  object-fit: contain;  /* Shows full image without cropping */
+  object-position: center top;  /* Positions image at center-top for better face visibility */
+  background-color: #f8f9fa;  /* Optional: adds subtle background if image doesn't fill container */
+}
+.categorySection {
+    transform: translateY(-50px); /* Adjust the -50px value as needed */
+}
+.categorySection {
+    margin-bottom: -100px; /* Adjust the negative value as needed */
 }

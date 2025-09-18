@@ -12,6 +12,7 @@ const Product = () => {
     axios
       .get("https://fakestoreapi.com/products")
       .then((res) => {
+        
         setProducts(res.data);
         setIsLoading(false);
       })
@@ -23,6 +24,7 @@ const Product = () => {
 
   return (
     <>
+    {/* is  loading is true, we need the loader component, otherwise the data is present */}
       {isLoading ? (
         <Loader />
       ) : (

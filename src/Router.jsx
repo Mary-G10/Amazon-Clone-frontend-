@@ -19,10 +19,6 @@ function Routing() {
         <Route path="/category/:categoryName" element={<Results />} />
         <Route path="/products/:productId" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
-        <Route
-          path="*"
-          element={<div>Path not found: {window.location.pathname}</div>}
-        />
       </Routes>
     </Router>
   );

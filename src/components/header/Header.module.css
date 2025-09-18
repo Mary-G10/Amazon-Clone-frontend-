@@ -46,16 +46,13 @@
 
 .delivery {
   display: flex;
-  flex-direction: column;
+  
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 3px;
   font-weight: bold;
   padding: 5px;
-  min-width: 120px;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  
 }
 
 .delivery:hover {
