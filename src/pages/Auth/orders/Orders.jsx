@@ -13,14 +13,4 @@ function Orders() {
 
 export default Orders;
 
-// import React from 'react'
-// import classes from "../src/pages/Auth/orders/Orders.jsx";
-// function Orders() {
-//   return (
-//     <div>
-//       Orders
-//     </div>
-//   )
-// }
 
-// export default Orders

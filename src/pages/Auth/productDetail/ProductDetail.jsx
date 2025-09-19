@@ -12,7 +12,9 @@ function ProductDetail() {
   const { productId } = useParams();
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-
+  // Extracts the productId parameter from the URL using React Router's useParams hook.
+  // Creates state to store the product data, initialized as an empty object.
+  // Creates state to track loading status, initialized as false.
   useEffect(() => {
     setIsLoading(true);
     axios
@@ -24,8 +26,19 @@ function ProductDetail() {
       .catch((err) => {
         console.log(err);
         setIsLoading(false);
+        // The false value typically triggers the UI to stop showing loading spinners
       });
   }, [productId]);
+  // Starts a useEffect hook that runs when the component mounts or when dependencies change.
+  // Sets loading state to true before making the API call.
+  // Makes a GET request to fetch product details. Constructs URL by combining base URL with the specific product ID.
+  // Stores the product data from res.data in state Sets loading to false
+  // Dependency array - effect re-runs when productId changes
+  // Gets a product ID from the URL
+  // Fetches product data from an API when the component loads
+  // Shows a loading spinner while fetching
+  // Displays the product using a reusable ProductCard component
+  // Handles errors by logging them and stopping the loading state
 
   return (
     <LayOut>
@@ -33,12 +46,12 @@ function ProductDetail() {
         <Loader />
       ) : (
         <ProductCard
-        // passes as a props
-         product={product}
+          // passes as a props
+          product={product}
           flex={true}
-           renderDesc={true}
-           renderAdd={true}
-            />
+          renderDesc={true}
+          renderAdd={true}
+        />
       )}
     </LayOut>
   );

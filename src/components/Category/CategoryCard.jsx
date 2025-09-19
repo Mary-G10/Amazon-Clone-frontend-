@@ -20,6 +20,7 @@ const CategoryCard = ({ data }) => {
 };
 
 export default CategoryCard;
+// The component creates a clickable category card that displays an image and title, with the entire card serving as a link to a category page. The use of optional chaining (?.) makes it safe to use even if the data prop is missing or incomplete
 
 {/* <Link to={`/category/${data.name}`}>
 

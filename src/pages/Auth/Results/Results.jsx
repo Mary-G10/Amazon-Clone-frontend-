@@ -9,7 +9,8 @@ import { productUrl } from "../../../Api/EndPoints";
 function Results() {
   const [results, setResults] = useState([]);
   const { categoryName } = useParams();
-
+  // Creates state variable results initialized as an empty array, with setResults function to update it. This will store the fetched products.
+  // Extracts the categoryName parameter from the current URL using React Router's useParams hook.
   useEffect(() => {
     axios
       .get(`${productUrl}/products/category/${categoryName}`)
@@ -30,13 +31,14 @@ function Results() {
         <hr />
         <div className={classes.products_container}>
           {results?.map((product) => (
-            <ProductCard 
-            key={product.id} 
-            product={product} 
-            renderDesc={false}
-            renderAdd={true}
+            <ProductCard
+              key={product.id}
+              product={product}
+              renderDesc={false}
+              renderAdd={true}
             />
           ))}
+          {/* Uses optional chaining and map to iterate over the results array, creating a ProductCard for each product. */}
         </div>
       </section>
     </LayOut>
