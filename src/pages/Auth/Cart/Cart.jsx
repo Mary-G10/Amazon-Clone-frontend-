@@ -5,13 +5,13 @@ import { DataContext } from "../../../components/dataProvider/DataProvider";
 import ProductCard from "../../../components/product/ProductCard";
 import CurrencyFormat from "../../../components/CurrencyFormat";
 import { Link } from "react-router-dom";
-import { Type } from "../../../utility/Action.type"; 
+import { Type } from "../../../utility/Action.type";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 
 function Cart() {
   const [{ basket, user }, dispatch] = useContext(DataContext);
-// by using reducer(prev,curr), return result previous+current initially stat from 0
+  // by using reducer(prev,curr), return result previous+current initially stat from 0
   const total = basket?.reduce((amount, item) => {
     return amount + item.price * item.amount;
   }, 0);
@@ -46,9 +46,8 @@ function Cart() {
             // if it has item in the cart return productcard, pass the item using props and ten render desr pass
             basket?.map((item, i) => {
               return (
-                <section className={classes.cart_product}>
+                <section className={classes.cart_product} key={item.id || i}>
                   <ProductCard
-                    key={i}
                     product={item}
                     renderDesc={true}
                     renderAdd={false}
@@ -66,7 +65,7 @@ function Cart() {
                       className={classes.btn}
                       onClick={() => decrement(item.id)}
                     >
-                      <IoIosArrowDown size={20}/>
+                      <IoIosArrowDown size={20} />
                     </button>
                   </div>
                 </section>
@@ -85,7 +84,7 @@ function Cart() {
               <input type="checkbox" />
               <small>This order contains a gift</small>
             </span>
-            <Link to="/payments">Continue to checkout</Link>
+            <Link to="/payment">Continue to checkout</Link>
           </div>
         ) : null}
       </section>

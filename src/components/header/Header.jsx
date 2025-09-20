@@ -6,15 +6,22 @@ import { BsSearch } from "react-icons/bs";
 import LowerHeader from "./LowerHeader";
 import { BiCart } from "react-icons/bi";
 import { DataContext } from "../dataProvider/DataProvider";
+import { auth } from "../../utility//firebase";
 
 const Header = () => {
-  const [{ basket }, dispatch] = useContext(DataContext);
+  const [{user, basket }, dispatch] = useContext(DataContext);
   //   Destructures the basket array and dispatch function from the shared context
   // basket contains shopping cart items, dispatch is for updating state
   // Gets the shopping basket data from the shared context
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
+
+  // Handle sign out
+  const handleSignOut = () => {
+    auth.signOut();
+  };
+
   //Reduces the basket array to calculate total quantity of items. Sums up the amount property of each item in the basket stat at 0
   return (
     <>
@@ -62,10 +69,32 @@ const Header = () => {
               </select>
             </Link>
 
-            <Link to="/">
-              <p>Sign In</p>
-              <span>Account & Lists</span>
-            </Link>
+            {/* Account Section - Fixed conditional rendering */}
+            {user === undefined ? (
+              // Loading state
+              <div>
+                <p>Loading...</p>
+              </div>
+            ) : user ? (
+              // User is logged in
+              <div>
+                <p>Hello {user.email?.split("@")[0]}</p>
+                <span 
+                  onClick={handleSignOut}
+                  style={{ cursor: 'pointer', textDecoration: 'underline' }}
+                >
+                  Sign Out
+                </span>
+              </div>
+            ) : (
+              // User is logged out
+              <Link to="/auth">
+                <div>
+                  <p>Hello, Sign in</p>
+                  <span>Account & Lists</span>
+                </div>
+              </Link>
+            )}
 
             <Link to="/orders">
               <p>Returns &</p>
