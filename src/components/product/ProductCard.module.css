@@ -2,7 +2,7 @@
     display: flex !important;
     gap: 50px;
     align-items: flex-start;
-    min-height: 50vh;
+    min-height: 20vh;
     box-shadow: none !important;
     position: static !important;
     padding: 0 !important;

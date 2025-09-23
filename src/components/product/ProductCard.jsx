@@ -5,8 +5,8 @@ import classes from "./ProductCard.module.css";
 import { Link } from "react-router-dom";
 import { DataContext } from "../dataProvider/DataProvider";
 import { Type } from "../../utility/Action.type";
-// Destructures props: product (product data), flex (layout flag), renderDesc (show description flag), renderAdd (show add button flag)
-// Destructures product object to extract individual properties for easier access
+// Destruct props: product (product data), flex (layout flag), renderDesc (show description flag), renderAdd (show add button flag)
+// Destruct product object to extract individual properties for easier access
 const ProductCard = ({ product, flex, renderDesc, renderAdd }) => {
   const { image, title, id, rating, price, description } = product;
   const [state, dispatch] = useContext(DataContext);

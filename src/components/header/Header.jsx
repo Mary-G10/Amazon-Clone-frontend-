@@ -10,7 +10,7 @@ import { auth } from "../../utility//firebase";
 
 const Header = () => {
   const [{user, basket }, dispatch] = useContext(DataContext);
-  //   Destructures the basket array and dispatch function from the shared context
+  //   Destruct the basket array and dispatch function from the shared context
   // basket contains shopping cart items, dispatch is for updating state
   // Gets the shopping basket data from the shared context
   const totalItem = basket?.reduce((amount, item) => {

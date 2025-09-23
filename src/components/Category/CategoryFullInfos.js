@@ -15,7 +15,7 @@ export const categoryImage = [
     title: "Men's Clothing",
     name: "men's clothing",
     imgLink:
-      "https://m.media-amazon.com/images/I/618bcm65ksL._AC_UL480_FMwebp_GL65_.jpg",
+      "https://m.media-amazon.com/images/I/61Jr-EoLGnL._AC_SY550_.jpg",
   },
   {
     title: "Jewelery",
