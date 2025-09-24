@@ -9,7 +9,7 @@
     "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "22"
+    "node": "18"
   },
   "main": "index.js",
   "dependencies": {
@@ -26,3 +26,6 @@
   },
   "private": true
 }
+
+
+ 
