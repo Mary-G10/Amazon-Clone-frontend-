@@ -9,31 +9,41 @@ const stripe = require("stripe")(process.env.STRIPE_KEY);
 setGlobalOptions({ maxInstances: 10 });
 const app = express();
 app.use(cors({ origin: true }));
+//  CORS middleware for your Express app, allowing all origins to make requests to your server.
 
 app.use(express.json());
+// Allows the app to handle JSON data in POST requests
+
 
 app.get("/", (req, res) => {
   res.status(200).json({
     message: "Success!",
   });
 });
-
+// root path, checks the api is running and return a 200 status code with a success message
 app.post("/payment/create", async (req, res) => {
+  // async to calls to Stripe
   const total = parseInt(req.query.total);
+  // Extracts the total parameter from the query string
+  // Converts it to an integer using parseInt()
   if (total > 0) {
+    // Validates that the total amount is greater than 0 and prevent creating fro invalids amount
     const paymentIntent = await stripe.paymentIntents.create({
       amount: total,
       currency: "usd",
     });
-
+    // await waits for the Stripe API call to complete and create a new stripe payment with the specified amount
     res.status(201).json({
       clientSecret: paymentIntent.client_secret,
     });
+    // Sends back the client secret from the PaymentIntent
+// Client secret is used by frontend to confirm the payment
   } else {
     res.status(403).json({
       message: "total must be greater than 0",
     });
   }
+  // If total is 0 or negative, returns HTTP 403 (Forbidden)
 });
 
 exports.api = onRequest(app);
