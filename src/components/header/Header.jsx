@@ -6,7 +6,7 @@ import { BsSearch } from "react-icons/bs";
 import LowerHeader from "./LowerHeader";
 import { BiCart } from "react-icons/bi";
 import { DataContext } from "../dataProvider/DataProvider";
-import { auth } from "../../utility//firebase";
+import { auth } from "../../utility/firebase";
 
 const Header = () => {
   const [{user, basket }, dispatch] = useContext(DataContext);

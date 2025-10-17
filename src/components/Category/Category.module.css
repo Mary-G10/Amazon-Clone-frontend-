@@ -30,8 +30,6 @@
   /* to place the imag up o the carousel  */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-
-  /* to put 4 img equal fraction  */
   max-width: 1600px;
   place-items: center;
 }
